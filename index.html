@@ -1,0 +1,57 @@
+<html>
+<body>
+<script type="text/javascript" src="raphael-min.js"></script>
+<h2>Project</h2>
+
+<script>
+/*var data=
+{
+	"category":"parent",
+	"value":"1000",
+	"children": [
+	{
+		"category":"firstChild",
+		"value":"100"
+	},
+	{
+		"category":"secondChild",
+		"value":"500",
+		"children": [
+		{
+			"category":"kid1",
+			"value":"200"
+		},
+		{
+			"category":"kid2",
+			"value":"300"
+		}]
+	}]
+}*/
+window.onload=function(){
+var paper = Raphael(0, 0, 1000, 1000);
+var arr=[20,30,40,20];
+var i=0,l=0,x=100,y=100,r=0;
+l=arr.length;
+circle_draw(500,500,90);
+while(i<l)
+{
+	r=arr[i];
+	x=x+50+r;
+	y=y+50;
+	circle_draw(x,y,r);
+	line(x,y);
+	i++;
+}
+
+function circle_draw(x,y,r)
+{
+	paper.circle(x,y,r);
+}
+function line(x,y)
+{
+	paper.path("M500 500L"+x+" "+y);
+}
+}
+</script>
+</body>
+</html>
